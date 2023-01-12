@@ -1,5 +1,7 @@
 {
     "hosts": [
+        ["localhost", 80],
+        ["localhost", 443],
         ["miuftp.tylertech.com", 22],
         ["tylersftp.tylertech.com", 22],
         ["tylersftp.tylertech.com", 443],
