@@ -1,0 +1,256 @@
+::-webkit-scrollbar {
+  background: transparent;
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: darkgrey;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 5px;
+}
+
+@font-face {
+    font-family: RooneySans;
+    src: url(../fonts/RooneySans.ttf);
+}
+
+body {
+    background: rgb(254, 255, 246);
+    color: #212121;
+    font-family: RooneySans;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+
+/* titlebar */
+
+#titlebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    height: 35px;
+    max-height: 35px;
+    /* Make titlebar draggable */
+    -webkit-app-region: drag;
+    user-select: none;
+}
+
+/* Titlebar Buttons */
+
+#titlebar #icons button {
+    /* Remove the dragging ability from titlebar buttons */
+    -webkit-app-region: no-drag;
+    /* Circlular Apple-like button design */
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    padding: 2px;
+    font-size: 8px;
+    /* Button spacing */
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+#titlebar #icons {
+    /* Changes the side and order that the titlebar buttons are in */
+    float: right;
+    /* float: left; */
+}
+
+#titlebar .container #title {
+    /* Changes the side that the titlebar title is on */
+    float: left;
+    /* float: right; */
+}
+
+/* Coloring */
+
+.light {
+    background: #fff;
+    color: #000;
+}
+
+.dark {
+    background: #000;
+    color: #fff;
+}
+
+/* Begin button coloring */
+
+.red {
+    background: #ed6a5e;
+    color: transparent;
+    border: 1px solid #8a3d36;
+    transition: 0.1s;
+}
+
+.red:hover {
+    color: #8a3d36;
+    transition: 0.1s;
+}
+
+.green {
+    background: #61c555;
+    color: transparent;
+    border: 1px solid #2a5424;
+    transition: 0.1s;
+}
+
+.green:hover {
+    color: #2a5424;
+    transition: 0.1s;
+}
+
+.yellow {
+    background: #f4c04e;
+    color: transparent;
+    border: 1px solid #695323;
+    transition: 0.1s;
+}
+
+.yellow:hover {
+    color: #695323;
+    transition: 0.1s;
+}
+
+/* End button coloring */
+
+/* Page Content */
+
+#content {
+    position: fixed;
+    top: 35px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+}
+
+.container {
+    padding: 8px;
+}
+
+/* End General Styling */
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+/* End General Styling */
+
+/* Scroll Box Styling */
+
+.scroll-box {
+    margin-top: 20%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    height: 15em;
+    width: 30em;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    user-select: none;
+}
+
+.scroll-box .scroll-box-content {
+    padding: 5px;
+}
+
+.scroll-box-header {
+    background: #fff;
+    padding: 5px;
+    border-bottom: 1px solid rgb(182, 182, 182);
+    display: flex;
+    position: sticky;
+    top: 0;
+    font-weight: bold;
+    
+}
+
+.scroll-box-header #hostname {
+    flex: 1;
+}
+
+.scroll-box-header #status {
+    flex: 0;
+}
+
+.scroll-box-header .scroll-box-header-title {
+    flex: 1;
+}
+
+.slot {
+    display: flex;
+}
+
+.slot #hostname {
+    flex: 1;
+}
+
+.slot #status {
+    flex: 0;
+}
+
+#content .container button {
+    padding: 10px 15px;
+    width: 75px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+}
+
+#content .container button:hover {
+    background: rgb(194, 194, 194);
+}
+
+#content .container button:active {
+    background: rgb(182, 182, 182);
+}
+
+#content .container button:disabled {
+    background: rgb(182, 182, 182);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#content .container button:disabled:hover {
+    background: rgb(182, 182, 182);
+    cursor: not-allowed;
+}
+
+#toast {
+    position: absolute;
+}
