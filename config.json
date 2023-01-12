@@ -1,0 +1,20 @@
+{
+    "hosts": [
+        ["miuftp.tylertech.com", 22],
+        ["tylersftp.tylertech.com", 22],
+        ["tylersftp.tylertech.com", 443],
+        ["edelivery.tylertech.com", 443],
+        ["tylerdeployer.tylerdeploy.com", 443],
+        ["tylerdeployer2.tylerdeploy.com", 443],
+        ["tylerdeployer3.tylerdeploy.com", 443],
+        ["tylerdeployer3.tylerdeploy.com", 443],
+        ["tylerdeployer.tylerdeploy.com", 10943],
+        ["tylerdeployer2.tylerdeploy.com", 10944],
+        ["tylerdeployer3.tylerdeploy.com", 10945],
+        ["tylerdeployer4.tylerdeploy.com", 10946],
+        ["tylerdeployer5.tylerdeploy.com", 10947],
+        ["tylerdeployer6.tylerdeploy.com", 10948],
+        ["tylerdeployer7.tylerdeploy.com", 10949],
+        ["tylerdeployer8.tylerdeploy.com", 10950]
+    ]
+}
