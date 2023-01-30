@@ -1,7 +1,5 @@
 {
     "hosts": [
-        ["127.0.0.1", 80],
-        ["127.0.0.1", 443],
         ["miuftp.tylertech.com", 22],
         ["tylersftp.tylertech.com", 22],
         ["tylersftp.tylertech.com", 443],
