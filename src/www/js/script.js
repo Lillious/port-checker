@@ -31,7 +31,6 @@ fetch('https://raw.githubusercontent.com/Lillious/port-checker/main/config.json'
 
 const scanButton = document.getElementById('scan');
 const toast = document.getElementById('toast');
-var scanned = 0; // Counter for the number of items that have been scanned
 
 async function start () {
     // Read and parse config.json
