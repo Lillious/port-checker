@@ -51,6 +51,7 @@ async function start () {
             createSlotElement(hostname, port, 'Offline');
         }
         toast.innerHTML = 'Scan complete!';
+        scanButton.disabled = false;
     }
 }
 
