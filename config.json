@@ -1,9 +1,13 @@
 {
     "hosts": [
+        /* Start Tyler Technologies FTP URLs */
         ["miuftp.tylertech.com", 22],
         ["tylersftp.tylertech.com", 22],
         ["tylersftp.tylertech.com", 443],
+        /* End Tyler Technologies FTP URLs */
+        // Edelivery Server URLs 
         ["edelivery.tylertech.com", 443],
+        /* Start Tyler Deploy URLs */
         ["tylerdeployer.tylerdeploy.com", 443],
         ["tylerdeployer2.tylerdeploy.com", 443],
         ["tylerdeployer3.tylerdeploy.com", 443],
@@ -15,6 +19,23 @@
         ["tylerdeployer5.tylerdeploy.com", 10947],
         ["tylerdeployer6.tylerdeploy.com", 10948],
         ["tylerdeployer7.tylerdeploy.com", 10949],
-        ["tylerdeployer8.tylerdeploy.com", 10950]
+        ["tylerdeployer8.tylerdeploy.com", 10950],
+        /* End Tyler Deploy URLs */
+        // Tyler Technologies SSO for kiteworks
+        ["sso.tylertech.com", 443],
+        // Okta
+        ["www.okta.com", 443],
+        /* Start Windows Update URLs */
+        ["forefrontdl.microsoft.com", 443],
+        ["ntservicepack.microsoft.com", 443],
+        ["statsfe2.ws.microsoft.com", 443],
+        ["update.microsoft", 443],
+        ["update.microsoft.com", 443],
+        ["update.microsoft.com.nsatc.net", 443],
+        ["windowsupdate.com", 443],
+        ["windowsupdate.microsoft.com", 443],
+        ["windowsupdate.nsatc.net", 443],
+        ["wustat.windows.com", 443]
+        /* End Windows Update URLs */
     ]
 }
