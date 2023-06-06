@@ -1,18 +1,16 @@
 ::-webkit-scrollbar {
-  background: transparent;
-  width: 4px;
-  height: 4px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: darkgrey;
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  border-radius: 5px;
-}
+    background: transparent;
+    width: 0px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3f78c4;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: #3f78c4;
+  }
 
 @font-face {
     font-family: RooneySans;
@@ -20,114 +18,66 @@
 }
 
 body {
-    background: rgb(254, 255, 246);
-    color: #212121;
+    background: #161b22;
+    color: #d4d4d4;
     font-family: RooneySans;
     font-size: 14px;
     line-height: 1.5;
     margin: 0;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 button {
     cursor: pointer;
     outline: none;
+    border: none;
 }
-
-/* titlebar */
-
 #titlebar {
     position: fixed;
+    z-index: 10000;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     height: 35px;
-    max-height: 35px;
-    /* Make titlebar draggable */
+    background: #3f78c4;;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -webkit-user-select: none;
     -webkit-app-region: drag;
     user-select: none;
 }
 
-/* Titlebar Buttons */
+#titlebar #icons {
+    float: right;
+    height: 100%;
+    font-size: 0;
+    -webkit-app-region: none;
+}
 
 #titlebar #icons button {
-    /* Remove the dragging ability from titlebar buttons */
-    -webkit-app-region: no-drag;
-    /* Circlular Apple-like button design */
-    border-radius: 50%;
-    width: 17px;
-    height: 17px;
-    padding: 2px;
-    font-size: 8px;
-    /* Button spacing */
-    margin-right: 5px;
-    font-weight: bold;
-}
-
-#titlebar #icons {
-    /* Changes the side and order that the titlebar buttons are in */
-    float: right;
-    /* float: left; */
-}
-
-#titlebar .container #title {
-    /* Changes the side that the titlebar title is on */
-    float: left;
-    /* float: right; */
-}
-
-/* Coloring */
-
-.light {
-    background: #fff;
-    color: #000;
-}
-
-.dark {
-    background: #000;
+    bottom: 0;
+    height: 100%;
+    width: 45px;
+    background: transparent;
+    transition: ease-in-out 0.1s;
     color: #fff;
 }
 
-/* Begin button coloring */
-
-.red {
-    background: #ed6a5e;
-    color: transparent;
-    border: 1px solid #8a3d36;
-    transition: 0.1s;
+#titlebar #icons button:hover:not(#close):not(:disabled) {
+    background: rgba(0, 0, 0, 0.2);
 }
 
-.red:hover {
-    color: #8a3d36;
-    transition: 0.1s;
+#titlebar #icons button:hover:is(#close):not(:disabled) {
+    background: rgba(255, 0, 0, 0.7);
 }
 
-.green {
-    background: #61c555;
-    color: transparent;
-    border: 1px solid #2a5424;
-    transition: 0.1s;
+#titlebar #icons button:disabled {
+    cursor: not-allowed;
 }
-
-.green:hover {
-    color: #2a5424;
-    transition: 0.1s;
-}
-
-.yellow {
-    background: #f4c04e;
-    color: transparent;
-    border: 1px solid #695323;
-    transition: 0.1s;
-}
-
-.yellow:hover {
-    color: #695323;
-    transition: 0.1s;
-}
-
-/* End button coloring */
 
 /* Page Content */
 
@@ -137,7 +87,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    overflow-y: scroll;
+    overflow: hidden;
 }
 
 .container {
@@ -176,29 +126,41 @@ button {
 /* Scroll Box Styling */
 
 .scroll-box {
-    margin-top: 20%;
-    overflow-y: scroll;
-    overflow-x: scroll;
-    height: 15em;
+    margin-top: 100px;
+    overflow-y: auto;
+    height: 252.5px;
     width: 30em;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    background: #0d1117;
+    border: 1px solid #22282e;
+    -webkit-user-select: none;
     user-select: none;
 }
 
-.scroll-box .scroll-box-content {
-    padding: 5px;
+.scroll-box-content {
+    overflow-y: auto;
+    margin-left: 20px;
+    margin-right: 28px;
+}
+
+.scroll-box-content * {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .scroll-box-header {
-    background: #fff;
+    background: #3f78c4;
+    border-bottom: 1px solid #2a3038;
+    color: #dcdcdc;
     padding: 5px;
-    border-bottom: 1px solid rgb(182, 182, 182);
     display: flex;
-    position: sticky;
     top: 0;
-    font-weight: bold;
-    
+    position: sticky;
+}
+
+.scroll-box-header * {
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .scroll-box-header #hostname {
@@ -225,32 +187,70 @@ button {
     flex: 0;
 }
 
-#content .container button {
-    padding: 10px 15px;
-    width: 75px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
+#toast {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
-#content .container button:hover {
-    background: rgb(194, 194, 194);
+#scan {
+    width: 100px;
+    padding: 8px;
+    background: #21262d;
+    border: 1px solid #2a3038;
+    color: #3f78c4;
+    font-weight: 500;
+    margin-left: 10px;
 }
 
-#content .container button:active {
-    background: rgb(182, 182, 182);
+#scan:hover:not(:disabled) {
+    background: #2b313b;
+    border: 1px solid #343b45;
+    color: #4b93f2;
 }
 
-#content .container button:disabled {
-    background: rgb(182, 182, 182);
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    color: rgba(0, 0, 0, 0.5);
+#scan:active:not(:disabled) {
+    background: #3f78c4;
+    border: 1px solid #3b7dd4;
+    color: #dcdcdc;
 }
 
-#content .container button:disabled:hover {
-    background: rgb(182, 182, 182);
+#scan:disabled {
+    opacity: 0.5;
     cursor: not-allowed;
 }
 
-#toast {
+.notification-bar {
+    position: fixed;
+    right: 5px;
+    top: 55px;
+    border-right: 4px solid #238636;
+    height: 35px;
+}
+.notification-bar .notification-content {
+    color: #dcdcdc;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 7px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.notification-bar .notification-close {
+    color: #dcdcdc;
     position: absolute;
+    padding: 8px;
+    right: 5px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.notification-bar .notification-close:hover {
+    color: #ed6a5e;
+    cursor: pointer;
+}
+
+#title {
+    position: fixed;
+    padding: 6px;
+    margin-left: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
 }

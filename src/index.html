@@ -4,7 +4,7 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <title></title>
+    <title>Port Checker</title>
     <!-- Preload Javascript -->
     <link rel='preload' href='./www/js/script.js' as='script'>
     <script defer src='./www/js/script.js'></script>
@@ -16,33 +16,29 @@
     <!-- Assign the 'dark' class to any element to apply a dark mode style to it -->
     <!-- Assign the 'light' class to any element to apply a light mode style to it -->
 <body>
-    <div id='titlebar' class='dark'>
-        <div class='container'>
-            <div id='title'>Tyler Port Checker</div>
-            <div id='icons'>
-                <button type='button' id='minimize' class='yellow'>🗕</button>
-                <button type='button' id='maximize' class='green'>🗖</button>
-                <button type='button' id='close' class='red'>🗙</button>
-            </div>
+    <div id='titlebar'>
+        <div id="title">Port Checker</div>
+        <div id='icons'>
+            <button type='button' id='minimize'>🗕</button>
+            <button type='button' disabled id='maximize'>🗖</button>
+            <button type='button' id='close' class='red'>🗙</button>
         </div>
     </div>
     <!-- Page Content -->
     <div id='content'>
         <div class='container'>
-            <div id="toast"></div>
             <div class='center'>
                 <div class='scroll-box'>
                     <div class='scroll-box-header'>
                         <div id='hostname'>Hostname</div>
                         <div id='status'>Status</div>
                     </div>
-                    <div class='scroll-box-content'>
-                    </div>
+                    <div class='scroll-box-content'></div>
                 </div>
             </div>
             <br>
             <div class="center">
-                <button type='button' class="light" id="scan">Scan</button>
+                <button type='button' disabled id="scan">Scan</button>
             </div>
         </div>
     </div>

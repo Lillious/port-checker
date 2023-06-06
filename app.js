@@ -4,9 +4,7 @@ process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,
-        minWidth: 400,
-        height: 600,
-        minHeight: 300,
+        height: 550,
         frame: false,
         darkTheme: true,
         webPreferences: {
@@ -15,7 +13,8 @@ const createWindow = () => {
             contextIsolation: false,
             sandbox: false,
             spellcheck: false,
-        }
+        },
+        resizable: false,
     });
     win.loadFile('./src/index.html')
     .catch((err) => { crash(err); });
