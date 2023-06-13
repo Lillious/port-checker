@@ -102,6 +102,7 @@ async function start () {
             let port = config.hosts[i][1];
             // Create a pending slot element
             const pendingElement = createSlotElement(hostname, port, '&#8230;');
+            if (pendingElement.innerHTML != '&#8230;') pendingElement.innerHTML = '...';
             pendingElement.style.marginRight = '5.5px';
             
             // Greyscale the pending slot element
@@ -112,10 +113,12 @@ async function start () {
                 pendingElement.style.filter = 'none';
                 pendingElement.style.marginRight = '0px';
                 pendingElement.innerHTML = '&#128994;';
+                if (pendingElement.innerHTML != '&#128994;') pendingElement.innerHTML = 'Online';
             } else {
                 pendingElement.style.filter = 'none';
                 pendingElement.style.marginRight = '0px'
                 pendingElement.innerHTML = '&#128308;';
+                if (pendingElement.innerHTML != '&#128308;') pendingElement.innerHTML = 'Offline';
             }
         }
         Notification.show('success', 'Scan completed');
